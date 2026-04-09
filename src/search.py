@@ -1,3 +1,6 @@
+from langchain_core.prompts import  PromptTemplate
+from langchain_google_genai import ChatGoogleGenerativeAI
+
 PROMPT_TEMPLATE = """
 CONTEXTO:
 {contexto}
@@ -25,5 +28,12 @@ PERGUNTA DO USUÁRIO:
 RESPONDA A "PERGUNTA DO USUÁRIO"
 """
 
+
 def search_prompt(question=None):
-    pass
+  llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", disable_streaming=True).bind(stop=["\nObservation:", "Observation:"])
+
+  prompt = PromptTemplate.from_template(PROMPT_TEMPLATE)
+  chain = prompt | llm
+  return chain
+  
+  
