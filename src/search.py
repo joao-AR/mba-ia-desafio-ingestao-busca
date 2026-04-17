@@ -29,9 +29,9 @@ RESPONDA A "PERGUNTA DO USUÁRIO"
 """
 
 
-def search_prompt(question=None):
-  llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", disable_streaming=True).bind(stop=["\nObservation:", "Observation:"])
-
+def search_prompt():
+  llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", disable_streaming=True).bind(stop=["\nObservation:", "Observation:"])
+  
   prompt = PromptTemplate.from_template(PROMPT_TEMPLATE)
   chain = prompt | llm
   return chain
