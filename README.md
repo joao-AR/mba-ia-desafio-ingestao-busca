@@ -2,7 +2,10 @@
 
 ## Instruções para executar o código
 
-## Ciar um ambiente virtual
+### Criar variáveis de ambiente
+Criar arquivo `.env` na raiz do projeto com base no `.env.example` e insira sua `GOOGLE_API_KEY`
+
+### Ciar um ambiente virtual
 
 ```sh
   python3 -m venv venv 
@@ -39,7 +42,7 @@ Substitua as perguntas em `run.sh` e execute o comando
 ```sh
   sh run.sh
 ```
-## Exemplo perguntas com respostas
+## Exemplo perguntas e respostas
 
 **PERGUNTA:** Qual o faturamento da Empresa SuperTechIABrazil?
 <br>
